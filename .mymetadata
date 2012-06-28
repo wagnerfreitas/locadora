@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="locadora"
+  id="myeclipse.1340907341756"
+  context-root="/locadora"
+  j2ee-spec="6.0"
+  archive="locadora.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
