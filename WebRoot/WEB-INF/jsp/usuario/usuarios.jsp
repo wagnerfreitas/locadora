@@ -7,9 +7,15 @@
 	</head>
 	<body>
 		<div>
+			<a href="<c:url value='/' />">Home</a>
+		</div>
+		<div>
 			<c:forEach items="${usuarios}" var="usuario">
-				${usuario}
+				Login: ${usuario.login} <br>
 			</c:forEach>
+		</div>
+		<div>
+			<a href="<c:url value='/usuarios/new' />">Novo usuário</a>
 		</div>
 	</body>
 </html>

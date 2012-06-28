@@ -7,7 +7,10 @@
 	</head>
 	<body>
 		<div>
-			
+			Bem vindo, ${usuarioLogin} - <a href="<c:url value='logout' />">Sair</a>
+		</div>
+		<div>
+			<a href="<c:url value='/usuarios' />">Usuários</a>
 		</div>
 	</body>
 </html>
