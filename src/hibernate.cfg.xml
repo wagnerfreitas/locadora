@@ -18,6 +18,7 @@
 		<property name="hibernate.format_sql">true</property>
 		
 		<mapping class="br.com.locadora.model.Usuario" />
+		<mapping class="br.com.locadora.model.DVD" />
 		
 	</session-factory>
 </hibernate-configuration>

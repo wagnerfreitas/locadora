@@ -3,15 +3,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Locadora</title>
+		<title>Cadastrar DVD</title>
 	</head>
 	<body>
 		<div>
-			Bem vindo, ${usuarioLogin} - <a href="<c:url value='logout' />">Sair</a>
-		</div>
-		<div>
-			<a href="<c:url value='/usuarios' />">Usuários</a>
-			<a href="<c:url value='/dvds' />">DVDs</a>
+			<form action="<c:url value='/dvds' />" method="post">
+				<label>Nome: </label><input type="text" name="dvd.nome" />
+				<input type="submit" value="Enviar" />
+			</form>
 		</div>
 	</body>
 </html>

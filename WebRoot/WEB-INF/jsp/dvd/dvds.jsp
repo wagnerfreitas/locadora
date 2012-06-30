@@ -3,15 +3,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Locadora</title>
+		<title>Usuários</title>
 	</head>
 	<body>
 		<div>
-			Bem vindo, ${usuarioLogin} - <a href="<c:url value='logout' />">Sair</a>
+			<a href="<c:url value='/' />">Home</a>
 		</div>
 		<div>
-			<a href="<c:url value='/usuarios' />">Usuários</a>
-			<a href="<c:url value='/dvds' />">DVDs</a>
+			<c:forEach items="${dvds}" var="dvd">
+				Nome: ${dvd.nome} <br>
+			</c:forEach>
+		</div>
+		<div>
+			<a href="<c:url value='/dvds/new' />">Novo DVD</a>
 		</div>
 	</body>
 </html>

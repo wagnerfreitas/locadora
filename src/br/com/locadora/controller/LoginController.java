@@ -31,7 +31,7 @@ public class LoginController {
 	public void login( String login, String senha ) {
 		Usuario usuario = usuarioDao.login(login, senha);
 		if( usuario == null )
-			result.include("mensagem", "Usu·rio ou senha inv·lidos.").redirectTo(this).login();
+			result.include("mensagem", "Usu√°rio ou senha inv√°lidos.").redirectTo(this).login();
 		else {
 			usuarioSession.setUsuario(usuario);
 			result.redirectTo(LocadoraController.class).index();
