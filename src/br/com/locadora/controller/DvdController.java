@@ -8,7 +8,8 @@ import br.com.caelum.vraptor.Result;
 import br.com.locadora.dao.DVDDao;
 import br.com.locadora.model.DVD;
 
-@Resource @Path("/dvds")
+@Resource
+@Path("/dvds")
 public class DvdController {
 
 	private Result result;
@@ -25,11 +26,28 @@ public class DvdController {
 	}
 
 	@Get("/new")
-	public void formulario() {}
+	public void formulario() {
+	}
 
 	@Post("")
 	public void save(DVD dvd) {
 		dvdDao.save(dvd);
+		result.redirectTo(this).dvds();
+	}
+
+	@Post("/{id}/alugar")
+	public void alugar(Long id) {
+		DVD dvd = dvdDao.load(id);
+		dvd.setAlugado(true);
+		dvdDao.update(dvd);
+		result.redirectTo(this).dvds();
+	}
+
+	@Post("/{id}/devolver")
+	public void devolver(Long id) {
+		DVD dvd = dvdDao.load(id);
+		dvd.setAlugado(false);
+		dvdDao.update(dvd);
 		result.redirectTo(this).dvds();
 	}
 }

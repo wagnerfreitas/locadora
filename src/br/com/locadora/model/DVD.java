@@ -1,13 +1,15 @@
 package br.com.locadora.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@SequenceGenerator(name = "sequence", sequenceName = "usuario_sequence", allocationSize = 1)
+@SequenceGenerator(name = "sequence", sequenceName = "dvd_sequence", allocationSize = 1)
 public class DVD {
 
 	@Id
@@ -17,6 +19,9 @@ public class DVD {
 	private String nome;
 
 	private boolean alugado;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -40,5 +45,13 @@ public class DVD {
 
 	public void setAlugado(boolean alugado) {
 		this.alugado = alugado;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }
