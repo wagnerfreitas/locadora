@@ -1,18 +1,17 @@
 package br.com.locadora.model;
 
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
-@SequenceGenerator(name = "sequence", sequenceName = "dvd_sequence", allocationSize = 1)
-public class DVD {
+@SequenceGenerator(name = "sequence", sequenceName = "cliente_sequence", allocationSize = 1)
+public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "sequence")
@@ -20,10 +19,8 @@ public class DVD {
 
 	private String nome;
 
-	private boolean alugado;
-
-	@Temporal(TemporalType.DATE)
-	private Date alugadoEm;
+	@OneToMany
+	private List<DVD> dvds;
 
 	public Long getId() {
 		return id;
@@ -41,19 +38,11 @@ public class DVD {
 		this.nome = nome;
 	}
 
-	public boolean isAlugado() {
-		return alugado;
+	public List<DVD> getDvds() {
+		return dvds;
 	}
 
-	public void setAlugado(boolean alugado) {
-		this.alugado = alugado;
-	}
-
-	public Date getAlugadoEm() {
-		return alugadoEm;
-	}
-
-	public void setAlugadoEm(Date alugadoEm) {
-		this.alugadoEm = alugadoEm;
+	public void setDvds(List<DVD> dvds) {
+		this.dvds = dvds;
 	}
 }

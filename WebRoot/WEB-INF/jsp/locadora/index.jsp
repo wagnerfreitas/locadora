@@ -12,6 +12,7 @@
 		<div>
 			<a href="<c:url value='/usuarios' />">Usuários</a>
 			<a href="<c:url value='/dvds' />">DVDs</a>
+			<a href="<c:url value='/clientes' />">Clientes</a>
 		</div>
 	</body>
 </html>

@@ -19,6 +19,7 @@
 		
 		<mapping class="br.com.locadora.model.Usuario" />
 		<mapping class="br.com.locadora.model.DVD" />
+		<mapping class="br.com.locadora.model.Cliente" />
 		
 	</session-factory>
 </hibernate-configuration>

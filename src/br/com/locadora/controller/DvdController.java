@@ -35,12 +35,13 @@ public class DvdController {
 		result.redirectTo(this).dvds();
 	}
 
-	@Post("/{id}/alugar")
+	@Get("/alugar/usuarios/{id}")
 	public void alugar(Long id) {
-		DVD dvd = dvdDao.load(id);
-		dvd.setAlugado(true);
-		dvdDao.update(dvd);
-		result.redirectTo(this).dvds();
+		result.include("usuarioId", id);
+	}
+
+	@Post("/{id}/alugar")
+	public void alugar() {
 	}
 
 	@Post("/{id}/devolver")
